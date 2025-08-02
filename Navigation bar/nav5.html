@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        
+        *{
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: sans-serif;
+            background-color:teal;
+        }
+        nav{
+            display: flex;
+        }
+        .nav-links{
+            height:50px;
+            width:100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;  
+           
+        }
+        .nav-links li{
+            float:right;
+        }
+        .nav-links li{
+            list-style: none;
+        }
+        .nav-links li a{
+            text-decoration: none;
+           font-weight:600;
+           color:white;     
+        }
+        
+            .hanburger{
+                display:none;
+            }
+        @media(max-width:765px){
+            .line{
+                display: block;                
+                height:3px;
+                width:30px;
+                background:white;
+                margin:5px;
+                transition: all 0.3s ease-in-out;
+                -webkit-transition: all 0.3s ease-in-out;
+            }
+            nav{
+                position: relative;
+            }
+            .hanburger{
+                display: block;
+                position: absolute;
+                right:2%;
+                top:30px;
+                z-index: 6;
+                transform: translate(-5%,-50%);
+                
+            }
+            .nav-links{
+                position: fixed;
+            background:rgb(214, 21, 86);
+                width: 100%;
+                height:100%;
+                flex-direction: column;
+                clip-path: circle(200px at 110% -10%);
+                -webkit-clip-path:circle(200px at 110% -10%);
+                transition: 0.7s;
+                justify-content: center;
+                
+            }   
+            .nav-links{
+               display: flex;
+               text-align:right;
+               align-items:end;
+               padding-right: 15px;
+               font-size: 20px; 
+               transform: translateX(180px);
+
+            }
+            .nav-links li{
+                padding:20px 40px;
+            }
+            .nav-links.active{
+                position: absolute;
+                width:100%;
+                height:560px;
+                flex-direction: column;
+                clip-path: circle(330px at 100% 40%);
+                -webkit-clip-path:circle(330px at 100% 40%);
+                transition:  1s;
+                transform: translateX(0px);
+            }
+            .hanburger.active .line:nth-child(1){
+                transform: translateY(8px) rotate(45deg);
+                transition: 0.6s;        
+     }
+            .hanburger.active .line:nth-child(2){
+                opacity: 0;    
+                visibility: hidden;            
+                }
+            .hanburger.active .line:nth-child(3){
+               transform: translateY(-8px) rotate(-45deg);
+        transition: 0.6s;
+                }
+            
+
+        }
+        
+    </style>
+
+
+<nav>
+    <div class="hanburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Project</a></li>
+        <li><a href="#">Reference</a></li>
+        <li><a href="#">Guide</a></li>
+    </ul>
+</nav>
+
+
+<script src="js/nav5.js"></script>
+</body>
+</html>
