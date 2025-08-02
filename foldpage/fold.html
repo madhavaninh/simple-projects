@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            display:grid;
+            place-items: center;
+            height:100vh;
+            background-color:black;
+            font-family:cursive;
+        }
+        .card{
+            width:300px;
+            height:400px;
+            background-color:#ee5f3bc1;
+            border-radius:15px;
+            display:grid;
+            place-items: center;
+            cursor:pointer;
+            position:relative;
+
+        }
+        .card::before{
+            content:"";
+            position: absolute;
+            width:85px;
+            height:85px;
+            left:0;
+            top:0;
+            border-radius:0 0 15px 0;
+            box-shadow: 5px 2px 5px .5px #16151574;
+            background:linear-gradient(135deg,#000 50%, #a80600 50% );
+            transition :.5s;
+        }
+        .card::after{
+            content:"";
+            position: absolute;
+            width:85px;
+            height:85px;
+            right:0;
+            bottom:0;
+            border-radius:15px 0 0 0;
+            box-shadow: -2px -5px 5px .5px #16151574;
+            background:linear-gradient(135deg,#a80600 50%,#000 40% );
+            transition :.5s;
+        }
+        
+        .card:hover::before,.card:hover::after{
+            width:205px;
+            height:205px;
+        }
+        h1{
+            padding:55px;
+            letter-spacing: 1px;
+        }
+
+        
+    </style>
+    <div class="card">
+        <h1>Happy Valentines Day</h1>
+    </div>
+</body>
+</html>
